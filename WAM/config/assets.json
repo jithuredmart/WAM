@@ -1,7 +1,9 @@
 {
   "core": {
     "css": {
-      "bower_components/build/css/dist.min.css": []
+      "bower_components/build/css/dist.min.css": [
+        "bower_components/angular-bootstrap/ui-bootstrap-csp.css"
+      ]
     },
     "js": {
       "bower_components/build/js/dist.min.js": [
@@ -13,6 +15,10 @@
         "bower_components/angular-ui-router/release/angular-ui-router.min.js",
         "bower_components/angular-jwt/dist/angular-jwt.min.js",
         "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+        "bower_components/angular-timer/app/js/angular-timer.min.js",
+        "bower_components/momentjs/min/moment.min.js",
+        "bower_components/momentjs/min/locales.min.js",
+        "bower_components/humanize-duration/humanize-duration.js",
         "bower_components/web-bootstrap/index.js"
       ]
     }

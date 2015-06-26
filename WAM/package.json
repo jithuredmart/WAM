@@ -20,8 +20,8 @@
   "dependencies": {
     "assetmanager": "latest",
     "async": "latest",
-    "bower": "latest",
     "body-parser": "latest",
+    "bower": "latest",
     "compression": "latest",
     "connect-flash": "latest",
     "consolidate": "latest",
@@ -33,6 +33,7 @@
     "jsonwebtoken": "latest",
     "lodash": "latest",
     "meanio": "latest",
+    "mongodb": "^2.0.35",
     "mongoose": "latest",
     "morgan": "latest",
     "ms": "latest",
