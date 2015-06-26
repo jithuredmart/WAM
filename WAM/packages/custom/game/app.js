@@ -25,6 +25,7 @@ Game.register(function(app, auth, database) {
   });
   
   Game.aggregateAsset('css', 'game.css');
+  Game.aggregateAsset('css', 'admin.css');
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
