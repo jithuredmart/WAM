@@ -2,7 +2,7 @@
 
 
 module.exports = {
-  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
+  db: 'mongodb://jithu:GUPTA21!a@candidate.20.mongolayer.com:11143/ACM',
   debug: true,
   logging: {
     format: 'tiny'

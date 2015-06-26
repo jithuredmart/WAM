@@ -1,16 +1,14 @@
-var MongoClient = require('mongodb').MongoClient
+var MongoClient = require('mongodb').MongoClient;
 
 
-var url = 'mongodb://jithu:GUPTA21!@acandidate.20.mongolayer.com:11143/ACM';
-
-
+var url = 'mongodb://jithu:GUPTA21!a@candidate.20.mongolayer.com:11143/ACM';
 
 module.exports.insert_new= function(req, res, next){
 var hashCode = function(s){
       return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
     }
-var req_query = req.query;
-   var full_event={name:req_query.name, userId:hashCode(req_query.name),score:parseInt(req_query.score), date:new Date()};
+        var req_query = req.query;
+   var full_event={name:req_query.name, userId:hashCode(req_query.name),score:parseInt(req_query.score), date:new Date()}
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     db.collection('play_users').insert(full_event, function (err, records) {
@@ -24,21 +22,20 @@ var req_query = req.query;
 module.exports.find_top_three= function(req, res, next){
   var req_query = req.query;
    var current_date= new Date();
-   var match={$match:{date:{$gte:current_date, $lte:new Date(current_date.setMonth(current_date.getMonth() - 6))};
+   var match={$match:{date:{$lte:new Date(), $gte:new Date(current_date.setMonth(current_date.getMonth() - 6))}}}
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    db.collection('play_users').aggregate([ match,{$group:{"_id":"$userId", "name":{"$first":"$name"}, "score":{"$first":"$score"}, "date":{"$first":"$date"}}}, {"name":1, "date":1, "score":1},{$sort:{score:-1}},{limit:3}], function (err, records) {
+    db.collection('play_users').aggregate([ match,{$group:{"_id":"$userId", "name":{"$first":"$name"}, "score":{"$first":"$score"}, "date":{"$first":"$date"}}}, {$project:{"name":1, "date":1, "score":1}},{$sort:{score:-1}},{$limit:3}], function (err, records) {
       if (err) throw err;
       if(records.length >0){
       res.send(records)
       }
-      }else{
+      else{
        res.send([]);
       }
-      }
+      })
     });
-  })
-}
+  }
 
 module.exports.send_mail = function(req, res, next){
 var nodemailer = require('nodemailer');

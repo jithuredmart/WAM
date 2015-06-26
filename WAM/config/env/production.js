@@ -2,7 +2,7 @@
 
 
 module.exports = {
-  db: "mongodb://jithu:GUPTA21!@acandidate.20.mongolayer.com:11143/ACM",
+  db: "mongodb://jithu:GUPTA21!a@candidate.20.mongolayer.com:11143/ACM",
   /**
    * Database options that will be passed directly to mongoose.connect
    * Below are some examples.

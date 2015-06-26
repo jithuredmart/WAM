@@ -1,6 +1,6 @@
 'use strict';
 
-var controller = require('../controller.js')
+var controller = require('../controllers/controller.js');
 /* jshint -W098 */
 // The Package is past automatically as first parameter
 module.exports = function(Game, app, auth, database) {
