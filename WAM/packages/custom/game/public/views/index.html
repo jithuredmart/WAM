@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
             <label for="name">Enter Your Name</label>
-            <input type="text"  class="form-control" data-ng-model="name" id="name" placeholder="Please Enter Your Name">
+            <input type="text"  class="form-control" data-ng-model="name" id="name" placeholder="Please Enter Your Name" required>
         </div>
             <div class="panel panel-default">
                 <!-- Default panel contents -->
@@ -80,7 +80,7 @@
                 <tr data-ng-repeat="user in totals_table">
                     <td><span class="label label-success"> {{ user.name}}</span></td>
                     <td> {{ user.score}}</td>
-                    <td>{{ user.date }} </td>
+                    <td>{{ user.date | Modified_date}} </td>
                 </tr>
                 </tbody>
             </table>
